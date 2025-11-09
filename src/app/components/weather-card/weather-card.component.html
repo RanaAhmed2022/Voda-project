@@ -1,0 +1,15 @@
+<div class="weather-card">
+    <h3 class="city-name">{{ city.city }}</h3>
+
+    <p class="date">
+        Date: {{ city.forecast[city.forecast.length - 1]?.date }}
+    </p>
+
+    <p class="temperature">
+        Temp: {{ unit === 'C' ? city.forecast[city.forecast.length - 1]?.temperatureCelsius : city.forecast[city.forecast.length - 1]?.temperatureFahrenheit }}°{{ unit }}
+    </p>
+
+    <p class="humidity">
+        Humidity: {{ city.forecast[city.forecast.length - 1]?.humidity }}%
+    </p>
+</div>

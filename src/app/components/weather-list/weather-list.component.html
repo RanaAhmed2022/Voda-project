@@ -1,0 +1,16 @@
+<div class="weather-list">
+
+    <!-- <app-navbar></app-navbar> -->
+    <div class="filters-container">
+        <app-weather-search (searchChanged)="onSearchChanged($event)"></app-weather-search>
+        <app-unit-toggle (unitChanged)="selectedUnit = $event"></app-unit-toggle>
+    </div>
+
+    <div class="cards-container">
+        <app-weather-card 
+            *ngFor="let city of filteredCities" 
+            [city]="city"
+            [unit]="selectedUnit">
+        </app-weather-card>
+    </div>
+</div>
